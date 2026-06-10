@@ -1,1 +1,313 @@
+/* ===== RESET BÁSICO E ESTILOS GLOBAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff; /* branco base */
+    color: #1e2a1e; /* verde escuro para contraste suave */
+    transition: all 0.3s ease;
+}
+
+/* Modo alto contraste (será ativado pelo JS) */
+body.alto-contraste {
+    background-color: #000000;
+    color: #ffff00;
+}
+body.alto-contraste a {
+    color: #ffff00;
+}
+body.alto-contraste .card, 
+body.alto-contraste .fundo-claro {
+    background-color: #111111;
+    color: #ffff66;
+    border-color: #ffff00;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TIPOGRAFIA ACESSÍVEL ===== */
+body.fonte-pequena {
+    font-size: 14px;
+}
+body.fonte-normal {
+    font-size: 18px;
+}
+body.fonte-grande {
+    font-size: 22px;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: linear-gradient(135deg, #1b4d1b, #2e7d32);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+header h1 {
+    font-size: 2.5rem;
+}
+.slogan {
+    font-style: italic;
+    margin-top: 5px;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ===== SEÇÕES ===== */
+.secao {
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+}
+.fundo-claro {
+    background-color: #f4f9f4; /* verde bem claro */
+}
+h2 {
+    color: #1b4d1b;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+h3 {
+    color: #2e7d32;
+    margin: 15px 0 10px;
+}
+
+/* ===== ILUSTRAÇÃO / DESENHO ===== */
+.ilustracao {
+    text-align: center;
+    margin: 30px 0;
+}
+.desenho-gota {
+    width: 80px;
+    height: 80px;
+    background-color: #4caf50;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    margin: 0 auto 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.legenda {
+    font-weight: bold;
+}
+
+/* ===== TABELA ===== */
+.tabela-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+.tabela-consumo {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+.tabela-consumo th, .tabela-consumo td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.tabela-consumo th {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* ===== CARDS ===== */
+.cards-solucoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    flex: 1 1 200px;
+    transition: transform 0.2s;
+    border-left: 5px solid #2e7d32;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== CALCULADORA ===== */
+.calculadora {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.calculadora label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+.calculadora select, .calculadora input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #1b5e20;
+}
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== GRÁFICO ===== */
+.grafico-container {
+    margin-top: 40px;
+}
+.grafico-barras {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+}
+.barra-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.barra-item span {
+    width: 80px;
+    font-weight: bold;
+}
+.barra {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 8px;
+    min-width: 40px;
+    margin-left: 10px;
+}
+
+/* ===== DICA RÁPIDA ===== */
+.dica-rapida {
+    background: #d4e6d4;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ===== BOTÃO DE ACESSIBILIDADE ===== */
+.acessibilidade-botao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2e7d32;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: 0.2s;
+}
+.acessibilidade-botao:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+.menu-acessibilidade {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+}
+.menu-acessibilidade button {
+    background: #2e7d32;
+    border: none;
+    margin: 0;
+    padding: 8px 15px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: #1b4d1b;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cards-solucoes {
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .barra-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .barra {
+        margin-left: 0;
+        margin-top: 5px;
+        width: 100% !important;
+    }
+}
