@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Agrofort | Agricultura Sustentável</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Botão de Acessibilidade Flutuante -->
+    <div class="acessibilidade-botao" id="btnAcessibilidade" aria-label="Botão de acessibilidade">
+        ♿
+    </div>
+
+    <!-- Menu de Acessibilidade (inicialmente escondido) -->
+    <div class="menu-acessibilidade" id="menuAcessibilidade">
+        <button id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
+        <button id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
+        <button id="altoContraste" aria-label="Ativar alto contraste">🌓 Alto Contraste</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1>🌱 Agrofort</h1>
+            <p class="slogan">Agro forte, futuro sustentável</p>
+            <!-- Menu de navegação -->
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#conclusao">Conclusão</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção Início / Apresentação -->
+        <section id="inicio" class="secao">
+            <div class="container">
+                <h2>Bem-vindo ao Agrofort</h2>
+                <p>
+                    O <strong>Agrofort</strong> nasceu com a missão de conscientizar sobre o uso racional da água na agricultura.
+                    Aqui você vai entender o problema do desperdício, aprender soluções práticas e calcular o consumo de água
+                    da sua produção.
+                </p>
+                <div class="ilustracao">
+                    <!-- Desenho/ilustração representando gota e planta -->
+                    <div class="desenho-gota"></div>
+                    <p class="legenda">💧 Menos desperdício, mais futuro!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Problema Ambiental -->
+        <section id="problema" class="secao fundo-claro">
+            <div class="container">
+                <h2>💧 O problema: Desperdício de água na agricultura</h2>
+                <article>
+                    <p>
+                        Apenas <strong>2,5%</strong> da água do planeta é doce, e a maior parte está congelada nas calotas polares.
+                        A agricultura consome cerca de <strong>70%</strong> da água doce disponível, e grande parte é desperdiçada
+                        por sistemas ineficientes.
+                    </p>
+                    <div class="tabela-container">
+                        <h3>Consumo médio de água por cultura (litros/kg)</h3>
+                        <table class="tabela-consumo">
+                            <thead>
+                                <tr><th>Cultura</th><th>Litros por kg</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>2500 L</td></tr>
+                                <tr><td>Soja</td><td>1800 L</td></tr>
+                                <tr><td>Milho</td><td>900 L</td></tr>
+                                <tr><td>Trigo</td><td>1300 L</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Esses números mostram a urgência de repensarmos os métodos de irrigação.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Soluções Sustentáveis -->
+        <section id="solucoes" class="secao">
+            <div class="container">
+                <h2>🌿 Soluções para economizar água</h2>
+                <div class="cards-solucoes">
+                    <div class="card">
+                        <h3>💧 Irrigação por gotejamento</h3>
+                        <p>Economiza até 60% de água comparado à irrigação tradicional.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🌧️ Captação de água da chuva</h3>
+                        <p>Aproveitar a água da chuva reduz o consumo de fontes naturais.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📊 Monitoramento do solo</h3>
+                        <p>Sensores evitam regar além do necessário.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔄 Reuso de água</h3>
+                        <p>Tratar e reutilizar a água usada na propriedade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção da Calculadora Interativa (Funcionalidade Principal) -->
+        <section id="calculadora" class="secao fundo-claro">
+            <div class="container">
+                <h2>📊 Calculadora de Gasto de Água</h2>
+                <p>Calcule quantos litros de água sua produção agrícola pode estar consumindo.</p>
+                
+                <div class="calculadora">
+                    <label for="cultura">Escolha a cultura:</label>
+                    <select id="cultura">
+                        <option value="2500">Arroz (2500 L/kg)</option>
+                        <option value="1800">Soja (1800 L/kg)</option>
+                        <option value="900">Milho (900 L/kg)</option>
+                        <option value="1300">Trigo (1300 L/kg)</option>
+                    </select>
+                    
+                    <label for="quantidade">Quantidade produzida (em kg):</label>
+                    <input type="number" id="quantidade" placeholder="Ex: 1000" min="0" step="100">
+                    
+                    <button id="calcularBtn">Calcular consumo</button>
+                    
+                    <div class="resultado" id="resultadoCalc">
+                        <!-- O resultado aparecerá aqui via JS -->
+                    </div>
+                </div>
+
+                <!-- Gráfico ilustrativo simples (barras em CSS) -->
+                <div class="grafico-container">
+                    <h3>Comparativo de consumo (litros por kg)</h3>
+                    <div class="grafico-barras">
+                        <div class="barra-item"><span>Arroz</span><div class="barra" style="width: 100%;">2500L</div></div>
+                        <div class="barra-item"><span>Soja</span><div class="barra" style="width: 72%;">1800L</div></div>
+                        <div class="barra-item"><span>Milho</span><div class="barra" style="width: 36%;">900L</div></div>
+                        <div class="barra-item"><span>Trigo</span><div class="barra" style="width: 52%;">1300L</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Conclusão -->
+        <section id="conclusao" class="secao">
+            <div class="container">
+                <h2>✅ Conclusão</h2>
+                <article>
+                    <p>
+                        Economizar água na agricultura não é apenas uma escolha econômica, mas um ato de responsabilidade com o futuro do planeta.
+                        Pequenas mudanças nos métodos de irrigação podem gerar enorme economia e ajudar a diminuir a escassez hídrica.
+                    </p>
+                    <p>
+                        <strong>Lembre-se:</strong> Água é vida. E a agricultura forte e sustentável depende do equilíbrio com o meio ambiente.
+                    </p>
+                    <div class="dica-rapida">
+                        <h3>💡 Dica sustentável do dia:</h3>
+                        <p id="dicaSustentavel">Carregando dica...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>Projeto desenvolvido para o Concurso Agrinho 2026</p>
+            <p>🌱 Agrofort - Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+            <p>Todos os textos, ilustrações e dados são de cunho educativo.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
